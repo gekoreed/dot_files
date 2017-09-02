@@ -1,8 +1,9 @@
-" test
-call plug#begin()
+autocmd! bufwritepost .vimrc source %
 let mapleader = ","
-Plug 'sbdchd/neoformat'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+call plug#begin()
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 call pathogen#infect()
@@ -32,6 +33,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1  
 let g:go_highlight_operators = 1  
 let g:go_highlight_build_constraints = 1
+
 nmap <F8> :TagbarToggle<CR>
  
 map <C-J> <C-W>j
